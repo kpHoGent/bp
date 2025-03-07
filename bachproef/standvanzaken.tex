@@ -234,3 +234,34 @@ MoveNet Lightning is het snelste model, terwijl Thunder zich onderscheidt door e
 Om de uitdagingen van pose estimation op mobiele apparaten het hoofd te bieden, zijn enkele praktische stappen nodig. Ten eerste is het belangrijk om een lichtgewicht model te kiezen dat minder rekenkracht vereist, maar toch goede prestaties levert. Dit maakt het mogelijk om real-time resultaten te behalen op mobiele hardware. Daarnaast moet het model getraind worden op diverse omstandigheden, zoals wisselende belichting, camerahoeken en occlusies, om de nauwkeurigheid in verschillende omgevingen te waarborgen.
 \medskip
 Ook is het nuttig om best practices voor training toe te passen, zoals het gebruik van synthetische data of transfer learning, vooral als er beperkte trainingsdata beschikbaar is. Dit helpt om het model robuuster en nauwkeuriger te maken. Ten slotte kan het gebruik van beschikbare tools en frameworks het proces vereenvoudigen, waardoor het trainen en implementeren van het model efficiënter verloopt.
+
+
+\subsection{\IfLanguageName{dutch}{Pose Estimation Modellen}{Pose Estimation Models}}%
+\label{subsec:pose-estimation-modellen}
+
+Pose Estimation modellen zijn vooraf getrainde modellen die menselijke poses kunnen detecteren en analyseren door lichaamsdelen en gewrichtsposities te identificeren in afbeeldingen of video’s.
+Deze modellen zijn essentieel voor het ontwikkelen van een mobiele applicatie om de uitvoering van fitnessoefeningen te analyseren. 
+Ze bieden een kosteneffectieve en flexibele oplossing om real-time feedback te geven aan gebruikers over hun houding en bewegingen, zonder dat er dure hardware of sensoren nodig zijn.
+
+\begin{itemize}
+    \item \textbf{OpenPose}: Dit is een van de eerste modellen voor real-time multi-person pose estimation. Het kan meerdere personen tegelijk analyseren en detecteert 137 keypoints, inclusief gezicht, handen en voeten. Hoewel het geschikt is voor complexe scènes met meerdere personen, is het trager dan andere modellen zoals PoseNet en MoveNet, en minder nauwkeurig in single-person scenario’s \autocite{BeomjunEtAl2022}.
+
+    \item \textbf{PoseNet}: Een lichtgewicht, open-source model ontworpen voor real-time prestaties op mobiele apparaten. Het biedt hoge nauwkeurigheid (97,6\%), maar kan slechts één persoon per frame analyseren, wat het geschikt maakt voor mobiele apps waar snelheid en nauwkeurigheid belangrijk zijn \autocite{BeomjunEtAl2022}.
+
+    \item \textbf{MoveNet}: Dit model heeft twee varianten: Lightning (snel) en Thunder (nauwkeurig). MoveNet Lightning is het snelste model, terwijl MoveNet Thunder betere nauwkeurigheid biedt (80,6\%). MoveNet Lightning heeft echter een lagere nauwkeurigheid (75,1\%), waardoor het een goede keuze is voor mobiele apps waar een balans tussen snelheid en nauwkeurigheid nodig is \autocite{BeomjunEtAl2022}.
+
+    \item \textbf{BlazePose}: Ontwikkeld door Google voor real-time toepassingen zoals fitness-tracking, is BlazePose ontworpen voor mobiele apparaten en gebruikt het 33 keypoints. Hoewel het minder nauwkeurig kan zijn bij complexe poses of occlusies, is het een sterke kandidaat voor fitness- en AR-apps waar real-time prestaties cruciaal zijn \autocite{PauloEtAl2024}.
+
+    \item \textbf{AlphaPose}: Een real-time multi-person pose estimation en tracking systeem dat een balans biedt tussen nauwkeurigheid en efficiëntie. Het is echter minder effectief bij complexe poses of occlusies, waardoor het geschikt is voor toepassingen waar meerdere personen worden gevolgd, zoals groepslessen \autocite{PauloEtAl2024}.
+
+    \item \textbf{RTMPose}: Een framework voor real-time multi-person pose estimation dat geschikt is voor diverse apparaten (CPU, GPU, mobiel). Het vereist wel optimalisatie voor real-time prestaties, maar is een goede keuze voor mobiele apps waar snelheid en schaalbaarheid belangrijk zijn \autocite{JiangEtAl2023}.
+
+    \item \textbf{ViTPose}: Dit model gebruikt vision transformers voor feature-extractie en biedt hoge nauwkeurigheid en schaalbaarheid. Het vereist echter een detector voor personen in top-down scenario’s, waardoor het geschikt is voor geavanceerde toepassingen waar nauwkeurigheid prioriteit heeft \autocite{XuEtAl2022}.
+
+    \item \textbf{MobilePose-Base en MobilePose-Shape}: Ultra-lichtgewicht modellen voor mobiele apparaten die onbekende objecten kunnen detecteren en geschikt zijn voor real-time gebruik. Hoewel ze minder nauwkeurig zijn dan grotere modellen, zijn ze ideaal voor mobiele apps waar snelheid en efficiëntie belangrijk zijn \autocite{HouEtAl2020}.
+\end{itemize}
+
+Voor een mobiele applicatie die fitnessoefeningen analyseert, zijn \textbf{PoseNet} en \textbf{MoveNet} de meest geschikte opties vanwege hun real-time prestaties en compatibiliteit met mobiele apparaten. 
+Als de app gericht is op groepsfitness, kan \textbf{OpenPose} een goede keuze zijn, ondanks de lagere snelheid. 
+\textbf{BlazePose} is ook een sterke kandidaat vanwege zijn focus op fitness-toepassingen en real-time prestaties. 
+De keuze hangt uiteindelijk af van de specifieke eisen van de app, zoals de noodzaak voor multi-person tracking of de balans tussen snelheid en nauwkeurigheid.
