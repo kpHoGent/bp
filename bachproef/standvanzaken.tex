@@ -40,6 +40,7 @@ Deze oefening wordt gezien als een indicator van absolute kracht in de rug en be
 \label{sec:verkeerde-liftingtechniek}
 
 De liftingtechniek is een cruciale factor bij powerliften en heeft een aanzienlijke invloed op het risico op blessures. 
+Naast het managen van trainingsbelasting, is het optimaliseren van de liftingtechniek het belangrijkste preventieve middel tegen blessures \autocite{StrömbäckEtAl2018}.
 Een suboptimale techniek is in verband gebracht met blessures, hoewel er onder onderzoekers, coaches en atleten discussie bestaat over wat een correcte techniek precies inhoudt. 
 Hieronder worden de belangrijkste aspecten van de liftingtechniek bij de squat, bench press en deadlift besproken, evenals enkele algemene overwegingen.
 
@@ -196,8 +197,9 @@ PoseNet behaalde de hoogste nauwkeurigheid en had de kleinste standaarddeviatie,
 MoveNet is een op Google gebaseerd inferentiemodel, ontwikkeld door IncludeHealth, een digitaal gezondheidsbedrijf.
 Het model is beschikbaar in twee versies: een webversie die gebruikmaakt van TensorFlow.js en een mobiele versie die draait op TensorFlow Lite. 
 MoveNet kent twee varianten: Lightning, gericht op prestaties, en Thunder, gericht op nauwkeurigheid. 
-Lightning ontvangt een video of afbeelding van een vaste grootte (192×192) met drie kanalen en gebruikt een dieptemultiplier van 1.0. 
-Thunder daarentegen ontvangt een input van 256×256 met drie kanalen en gebruikt een dieptemultiplier van 1.75, wat betekent dat het 1.75 keer meer lagen voor deep learning heeft en daardoor meer berekeningen uitvoert.
+Lightning ontvangt een video of afbeelding van een vaste grootte (192\×192) met drie kanalen en gebruikt een dieptemultiplier van 1.0. 
+Thunder daarentegen ontvangt een input van 256\×256 met drie kanalen en gebruikt een dieptemultiplier van 1.75, wat betekent dat het 1.75 keer meer lagen voor deep learning heeft en daardoor meer berekeningen uitvoert.
 MoveNet is een bottom-up model dat gebaseerd is op CenterNet en alle vier processen gelijktijdig berekent. 
-Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. MoveNet Lightning is het snelste model, terwijl Thunder zich onderscheidt door een hogere nauwkeurigheid \autocite{BeomjunEtAl2022}. 
+Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. 
+MoveNet Lightning is het snelste model, terwijl Thunder zich onderscheidt door een hogere nauwkeurigheid \autocite{BeomjunEtAl2022}. 
 
