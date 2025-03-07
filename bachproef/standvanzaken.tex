@@ -12,6 +12,7 @@
 Krachttraining omvat intensieve oefeningen die het lichaam blootstellen aan hoge fysieke eisen en zware belastingen. 
 Dit kan leiden tot blessures ten gevolge van overbelasting, verkeerde liftingtechnieken en onvoldoende rust.
 De meeste blessures treden op tijdens de uitvoering van de squat, bench press en deadlift.  
+
 Volgens \textcite{BengtssonEtAl2018} is het essentieel om de liftingtechniek te analyseren en te optimaliseren, evenals de trainingsbelasting en rusttijden, om het risico op blessures te verminderen.
 
 \medskip
@@ -85,17 +86,28 @@ Dit benadrukt het belang van technische precisie en aanpassing aan individuele b
 \label{sec:artificiële-intelligentie}
 
 Artificiële Intelligentie (AI) is een dynamisch en snel evoluerend vakgebied dat zich richt op het ontwikkelen van systemen die taken kunnen uitvoeren die normaal gesproken menselijke intelligentie vereisen, zoals leren, probleemoplossing en besluitvorming \autocite{SharifaniEtAl2023}.
-
 Het doel is om machines te ontwikkelen die autonoom kunnen functioneren in complexe en dynamische omgevingen \autocite{Kouassi2023}.
+
+\medskip
 
 AI als vakgebied is al meer dan 65 jaar in ontwikkeling en heeft zich inmiddels diep genesteld in ons dagelijks leven. Het speelt immers een curicale rol in sectoren zoals gezondheidszorg, transport, onderwijs en industrie, en wordt gezien als een belangrijke drijfveer voor sociaaleconomische veranderingen en technologische vooruitgang \autocite{JiangEtAl2022}.
 
+\medskip
+
 Binnen AI zijn Machine Learning (ML) en Deep Learning (DL) twee van de meest revolutionaire technologieën, die de afgelopen jaren aanzienlijke vooruitgang hebben geboekt \autocite{SharifaniEtAl2023}.
 
-\section{\IfLanguageName{dutch}{Machine Learning}{Machine Learning}}%
-\label{sec:machine-learning}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{ai.png}
+  \caption[Figuur 1]{\label{fig:ai}Het AI landschap met zijn verschillende technieken \autocite{Kouassi2023}}
+\end{figure}
+
+\subsection{\IfLanguageName{dutch}{Machine Learning}{Machine Learning}}%
+\label{subsec:machine-learning}
 
 ML is momenteel de meest dominante vorm van AI. Het is een methode voor data-analyse die het mogelijk maakt om analytische modellen automatisch te bouwen en te verbeteren. Het stelt computers in staat om te leren van ervaring, zonder expliciet te worden geprogrammeerd \autocite{SharifaniEtAl2023}.
+
+\medskip
 
 ML omvat de volgende technieken, die gecombineerd kunnen worden om nog krachtigere en veelzijdigere AI-systemen te ontwikkelen \autocite{Kouassi2023}. 
 
@@ -105,112 +117,112 @@ ML omvat de volgende technieken, die gecombineerd kunnen worden om nog krachtige
   \item \textbf{Reinforcement Learning (RL)}: RL draait om een model dat leert door interactie met een omgeving. Het model probeert een strategie (beleid) te ontwikkelen die maximale beloningen oplevert. Dit wordt vaak gebruikt in scenario's zoals robotica, gaming en autonome voertuigen, waarbij het model leert door trial-and-error. 
 \end{itemize}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{ai.png}
-  \caption[Figuur 1]{\label{fig:ai}Het AI landschap met zijn verschillende technieken \autocite{Kouassi2023}}
-\end{figure}
-
-\section{\IfLanguageName{dutch}{Deep Learning}{Deep Learning}}%
-\label{sec:deep-learning}
+\subsection{\IfLanguageName{dutch}{Deep Learning}{Deep Learning}}%
+\label{subsec:deep-learning}
 
 Dit is een geavanceerde vorm van ML die gebruikmaakt van gelaagde neurale netwerken, geïnspireerd op de structuur van het menselijk brein.
 Het model verwerkt data iteratief, waarbij het parameters aanpast op basis van feedback.  
 Het is vooral geschikt voor taken met grote hoeveelheden ongestructureerde data, zoals beeld- en spraakherkenning. 
 In tegenstelling tot traditionele ML modellen kan DL automatisch hoogwaardige kenmerken uit data halen, waardoor het beter presteert bij ingewikkelde taken \autocite{SharifaniEtAl2023}.
+De bekomen kenmerken kunnen vervolgens door het DL model zelf gebruikt worden of geïntegreerd worden in andere ML-modellen \autocite{JanieschEtAl2021}. 
 
-Er zijn verschillende DL-architecturen, zoals Convolutionele Neurale Netwerken (CNN's) voor beeldverwerking en Recurrente Neurale Netwerken (RNN's) voor tijdreeksdata. 
-DL kan zowel end-to-end systemen vormen als kenmerken extraheren voor andere ML-modellen \autocite{JanieschEtAl2021}. 
+Er zijn verschillende DL-architecturen, waarvan Convolutionele Neurale Netwerken (CNN's) en Recurrente Neurale Netwerken (RNN's) de meest bekende vormen.
+
+\begin{itemize}
+    \item \textbf{Convolutional Neural Networks (CNNs):} 
+    CNNs zijn deep learning-modellen die vooral worden gebruikt voor taken met afbeeldingen, zoals beeldclassificatie, objectdetectie en semantische segmentatie. Ze bestaan uit convolutielagen die kenmerken (features) uit afbeeldingen halen met behulp van filters (kernels), poolinglagen die de afbeelding verkleinen en belangrijke informatie behouden, en volledig verbonden lagen die de kenmerken combineren voor taken zoals classificatie. Activatie-functies helpen het model om complexe patronen te leren. CNNs zijn ideaal voor visuele data vanwege hun vermogen om ruimtelijke patronen te herkennen \autocite{ZhaoEtAl2024}.
+
+    \item \textbf{Recurrent Neural Networks (RNNs):} 
+    RNNs zijn deep learning-modellen die geschikt zijn voor sequentiële data, zoals tijdreeksen, tekst en gebeurtenissen. Ze hebben interne feedback-lussen die informatie van eerdere stappen onthouden, waardoor ze tijdafhankelijke patronen kunnen modelleren. Elke stap in de reeks wordt verwerkt met informatie uit vorige stappen, wat RNNs ideaal maakt voor taken zoals tijdreeksvoorspelling, tekstgeneratie en machinevertaling. RNNs zijn krachtig vanwege hun geheugen en vermogen om sequentiële relaties te leren \autocite{JanieschEtAl2021}.
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{cnn.png}
+  \caption[Figuur 2]{\label{fig:cnn}CNN architectuur voor de classificatie van een afbeelding \autocite{ChaiEtAl2021}}
+\end{figure}
+
+
 
 Kortom, Deep Learning is een krachtige en veelzijdige technologie die een centrale rol speelt in de moderne AI-revolutie. 
 Het is bijzonder effectief in het verwerken van grote en complexe datasets en heeft toepassingen in tal van domeinen. 
 Echter, de ontwikkeling van DL-modellen brengt ook uitdagingen met zich mee, zoals het optimaliseren van modellen en het integreren van logisch redeneren. 
 DL blijft een belangrijk onderzoeksgebied met een groot potentieel voor toekomstige innovaties \autocite{JiangEtAl2022}.
 
-\section{\IfLanguageName{dutch}{Computer Vision}{Computer Vision}}%
-\label{sec:computer-vision}
+\subsection{\IfLanguageName{dutch}{Computer Vision}{Computer Vision}}%
+\label{subsec:computer-vision}
 
 Computer Vision (CV) is een snelgroeiend vakgebied binnen de beeldverwerking, waarbij CNN's, een belangrijk onderdeel van DL, een centrale rol spelen.  
+
+\medskip
 
 In de beginfase van CV werden DL-methoden beperkt door technische uitdagingen, zoals beperkt geheugen en rekenkracht. 
 Hierdoor lag de focus aanvankelijk op traditionele ML-technieken. 
 Met de verbetering van hardware (CPU/GPU) en de ontwikkeling van krachtige DL-modellen werd DL echter de dominante benadering in CV \autocite{ChaiEtAl2021}.
 
+\medskip
+
 CNN's hebben een revolutie teweeggebracht in taken zoals beeldclassificatie, objectdetectie en beeldreconstructie. 
 Ze leren automatisch kenmerken uit ruwe data, waardoor ze complexe patronen kunnen herkennen en hogere niveau-representaties kunnen vormen. 
 Dit maakt ze ideaal voor praktische toepassingen. 
 
+\medskip
+
 CV wordt breed ingezet in domeinen zoals autonoom rijden (object- en verkeersherkenning), virtual reality (immersieve ervaringen), en intelligente videobewaking (detectie van verdachte activiteiten). 
 Ook wordt het gebruikt voor Human Activity Recognition (HAR), zoals het monitoren van ouderen of revalidatie, en voor taken zoals spraakherkenning en sentimentanalyse. 
+
+\medskip
 
 Een belangrijke uitdaging is dat CNN's veel rekenkracht en grote hoeveelheden gelabelde data vereisen, wat kostbaar en tijdrovend kan zijn. 
 Toch blijft het veld zich snel ontwikkelen, met toekomstige richtingen zoals ensemble learning (combinatie van meerdere CNN's), aandachtsmechanismen (gericht op belangrijke informatie in beelden) \autocite{ZhaoEtAl2024}. 
 
-\section{\IfLanguageName{dutch}{Pose Estimation}{Pose Estimation}}%
-\label{sec:pose-estimation}
+\subsubsection{\IfLanguageName{dutch}{Pose Estimation}{Pose Estimation}}%
+\label{subsubsec:pose-estimation}
  
 Pose Estimation is een CV-techniek die menselijke poses schat door lichaamsdelen en gewrichtsposities te detecteren in afbeeldingen of video's. 
 Het wordt gebruikt in toepassingen zoals games, animatie, medische analyse, AI-gestuurde persoonlijke trainers, human-computer interactie, bewegingsanalyse, augmented reality, virtual reality, posetracking, actieherkenning en surveillance systemen \autocite{SiddharthEtAl2021}.
 
-Er zijn twee hoofdbenaderingen: single-person (één persoon per frame) en multi-person (meerdere personen, inclusief occlusies). 
-Methoden variëren van top-down (eerst personen detecteren, dan lichaamsdelen) tot bottom-up (eerst lichaamsdelen detecteren, dan toewijzen aan personen). 
-Pose estimation kan in 2D (gewrichtslocaties in 2D) of 3D (ruimtelijke opstelling van gewrichten) worden uitgevoerd. 
-3D HPE is toepasbaar in virtual reality en sportanalyse en kan single-view (één camerabeeld) of multi-view (meerdere camerabeelden om occlusies te overwinnen) zijn \autocite{ZhengEtAl2023}.
+\medskip
 
-Convolutional Neural Networks (CNN's) spelen een centrale rol, waarbij ze worden getraind om lichaamsdelen te classificeren en ruimtelijke modellen te combineren voor nauwkeurige resultaten. 
+Pose estimation maakt gebruik van twee hoofdbenaderingen om de positie en oriëntatie van objecten (zoals mensen) in afbeeldingen of video's te schatten: \textbf{top-down} en \textbf{bottom-up} methoden. 
+Beide methoden hebben hun eigen sterke en zwakke punten, afhankelijk van de toepassing.
+
+\begin{itemize}
+    \item \textbf{Top-down methoden:} 
+    Deze benadering begint met het detecteren van een persoon in de afbeelding. 
+    Vervolgens wordt een bounding box (een kader) rond de persoon getrokken, waarbinnen de pose wordt geschat. 
+    Dit gebeurt door een 2D heatmap te genereren voor elk gewricht, zoals ellebogen of knieën. 
+    Top-down methoden zijn zeer effectief voor het detecteren van één persoon en bieden nauwkeurige pose-schattingen binnen de bounding box. 
+    Ze zijn echter minder geschikt voor situaties met meerdere personen, vooral wanneer er overlapping (occlusies) optreedt \autocite{LiuEtAl2022}.
+
+    \item \textbf{Bottom-up methoden:} 
+    In tegenstelling tot top-down methoden, detecteren bottom-up methoden eerst alle gewrichtspunten (keypoints) van alle personen in de afbeelding. 
+    Vervolgens worden deze punten gecombineerd op basis van de structuur van het menselijk lichaam om de pose te schatten. 
+    Deze aanpak is beter geschikt voor het detecteren van meerdere personen in één afbeelding en is minder gevoelig voor occlusies. 
+    Bottom-up methoden zijn echter complexer om te implementeren vanwege de noodzaak om keypoints correct te combineren \autocite{BeomjunEtAl2022}.
+\end{itemize}
+
+Het doel van pose estimation is om de \textbf{3D-positie en oriëntatie} van een object te bepalen op basis van zijn \textbf{2D-projectie} in een afbeelding of video. 
+Dit wordt bereikt door de 2D-locaties van keypoints (zoals gewrichten) te schatten en deze om te zetten naar een 3D-representatie \autocite{SulongEtAl2023}. 
+Beide methoden, top-down en bottom-up, spelen een cruciale rol in computer vision-toepassingen, zoals sportanalyse, augmented reality en robotica.
+
+\medskip
+
+Convolutional Neural Networks (CNN's) spelen een centrale rol hierby, waarbij ze worden getraind om lichaamsdelen te classificeren en ruimtelijke modellen te combineren voor nauwkeurige resultaten. 
 Andere geavanceerde technieken zijn Transformers (voor langeafstandsafhankelijkheden), Graph Convolutional Networks (voor correlaties tussen gewrichten) en Adversarial Learning (om robuustheid en nauwkeurigheid te verbeteren). 
 Moderne methoden zoals DeepPose (gebruikt Deep Neural Networks), Adversarial PoseNet (combineert generatoren en discriminatoren voor nauwkeurige heatmaps) en OpenPose (real-time multi-person schatting met Part Affinity Fields) hebben het veld aanzienlijk vooruit geholpen \autocite{ZhaoEtAl2024}.
 
-Een van de grootste uitdagingen bij HPE is het verlies van low-level kenmerken, beperkte receptive fields, en problemen veroorzaakt door occlusies of verstrengelde lichaamsdelen. 
-Om deze problemen aan te pakken, worden attention mechanisms zoals Context Coordinate Attention Module (CCAM), channel attention en spatial attention gebruikt om de aandacht te richten op belangrijke lichaamsdelen voor nauwkeurigere resultaten. 
-Populaire modellen zoals YOLOv8x-pose combineren snelheid en precisie, waardoor ze geschikt zijn voor real-time toepassingen.
-
-Voor training en evaluatie worden datasets zoals MS COCO 2017 (meer dan 20.000 afbeeldingen met 17 geannoteerde gewrichten) en CrowdPose (gericht op real-world crowd-scènes) gebruikt. 
-Evaluatiemetrics omvatten Average Precision (AP), gebaseerd op Object Keypoint Similarity (OKS), Average Recall (AR) voor het meten van keypoint-herkenning, en Latency (ms) om de inference-tijd van het model te beoordelen \autocite{DongEtAl2024}.
-
-Een voorbeeld van een geavanceerd model is CCAM-Person, gebaseerd op het YOLOv8-framework, dat YOLOv8 combineert voor doelherkenning met een binary classification-achtige benadering om keypoints te detecteren. Het model introduceert de Multi-scale Receptive Field (MRF) Module en het Multi-path Feature Pyramid Network (MFPN) om de interactie tussen verschillende feature-niveaus te optimaliseren, evenals het Context Coordinate Attention Module (CCAM) om de precisie te verhogen, vooral in gevallen van omgevingsgeluid of occlusies. 
-Experimentele resultaten tonen aan dat CCAM-Person concurrerende prestaties behaalt, met een verbetering van 2.8\% in average precision en 4.2\% in recall rate op de MS COCO 2017-dataset, en een stijging van 3.5\% in AP op de CrowdPose-dataset. 
-Ondanks een lichte afname in inference-snelheid door de aandachtmodules en multi-path fusie, blijft het model voldoen aan real-time eisen \autocite{DongEtAl2024}.
+\medskip
 
 Kortom, Human Pose Estimation (HPE) is een veelzijdige techniek met brede toepassingen, ondersteund door geavanceerde modellen en aandacht voor uitdagingen zoals occlusies en schaalvariaties. 
 Door de inzet van deep learning-technieken en innovatieve benaderingen blijft het veld zich snel ontwikkelen, met als doel real-time, nauwkeurige en robuuste pose-schatting mogelijk te maken \autocite{DongEtAl2024}.
 
-Technologieën zoals OpenPose, PoseNet en MoveNet bieden groot potentieel voor toepassingen op mobiele apparaten. 
-Deze methoden schatten poses door middel van deep learning op basis van camerainput, waardoor er geen extra sensoren nodig zijn en ze breed inzetbaar zijn op de meeste apparaten. 
-Ondanks dat OpenPose ongeveer 12 keer langzamer is dan MoveNet, heeft het als voordeel dat het de poses van meerdere personen tegelijk kan schatten. PoseNet blinkt uit in nauwkeurigheid, terwijl MoveNet Lightning het snelste model is.
-Deze technologieën openen de deur naar innovatieve toepassingen en verbeterde gebruikerservaringen op mobiele apparaten \autocite{BeomjunEtAl2022}.
 
-OpenPose was het eerste model dat realtime poseschatting voor meerdere personen mogelijk maakte. 
-OpenPose maakt gebruik van een bottom-up methode, waarmee het de beperkingen van de traditionele top-down aanpak overwint. 
-Dit model schat poses via deep learning op basis van camerainput, waardoor er geen extra sensoren nodig zijn en het breed toepasbaar is op de meeste apparaten. 
-Een belangrijk kenmerk van OpenPose is dat het de poses van meerdere personen tegelijk kan schatten. 
-Het model ondersteunt 137 keypoints: 25 voor het lichaam (inclusief de voeten), 21 voor elke hand en 70 voor het gezicht.
-OpenPose maakt gebruik van Part Affinity Fields (PAFs), een set van flow-velden die de relaties tussen lichaamsdelen van meerdere personen weergeven \autocite{KanaseEtAl2021}.  
-Hoewel het model 12 keer langzamer is dan MoveNet, blinkt het uit in het nauwkeurig identificeren van meerdere personen en het schatten van hun poses binnen een afbeelding. 
-Het herkent ook het verschil tussen objecten in één fase en vertoont een hoge prestatienauwkeurigheid.
-OpenPose is een krachtig hulpmiddel voor realtime poseschatting, vooral in scenario's waarbij meerdere personen moeten worden geanalyseerd \autocite{BeomjunEtAl2022}.
+\paragraph{\IfLanguageName{dutch}{Uitdagingen van Pose Estimation op mobiele apparaten}{Challenges for Pose Estimation on Mobile Devices}}%
+\label{par:uitdagingen-van-pose-estimation-op-mobiele-apparaten}
 
-PoseNet is een open source machine learning-model ontwikkeld door Google Creative Lab, ontworpen om menselijke poses in realtime te schatten. 
-Het model maakt gebruik van de COCO person key-point detection dataset, die de belangrijkste punten van het hele lichaam volgt. 
-Voor single-person poseschatting gebruikt PoseNet vier invoerelementen: een inputafbeelding, een image scale factor, een horizontale flip en een output stride. 
-Het single-person detection algoritme is sneller en eenvoudiger dan het multi-person detection algoritme. 
-PoseNet is ook beschikbaar voor mobiele apparaten via TensorFlow Lite, waardoor het compatibel is met Android en iOS. 
-PoseNet maakt gebruik van de top-down methode, waarbij eerst een persoon wordt gedetecteerd en vervolgens de pose binnen de bounding box wordt geschat. 
-Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. 
-PoseNet behaalde de hoogste nauwkeurigheid en had de kleinste standaarddeviatie, wat wijst op een consistente prestatie tussen runs \autocite{BeomjunEtAl2022}.
+Desondanks Pose Estimation al enorme technologische vooruitgang geboekt heeft, zijn er nog steeds enkele uitdagingen om modellen te integreren in mobiele applicaties.
 
-MoveNet is een op Google gebaseerd inferentiemodel, ontwikkeld door IncludeHealth, een digitaal gezondheidsbedrijf.
-Het model is beschikbaar in twee versies: een webversie die gebruikmaakt van TensorFlow.js en een mobiele versie die draait op TensorFlow Lite. 
-MoveNet kent twee varianten: Lightning, gericht op prestaties, en Thunder, gericht op nauwkeurigheid. 
-Lightning ontvangt een video of afbeelding van een vaste grootte (192\times192) met drie kanalen en gebruikt een dieptemultiplier van 1.0. 
-Thunder daarentegen ontvangt een input van 256\times256 met drie kanalen en gebruikt een dieptemultiplier van 1.75, wat betekent dat het 1.75 keer meer lagen voor deep learning heeft en daardoor meer berekeningen uitvoert.
-MoveNet is een bottom-up model dat gebaseerd is op CenterNet en alle vier processen gelijktijdig berekent. 
-Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. 
-MoveNet Lightning is het snelste model, terwijl Thunder zich onderscheidt door een hogere nauwkeurigheid \autocite{BeomjunEtAl2022}. 
-
-
-\subsection{\IfLanguageName{dutch}{Uitdagingen van Pose Estimation op Mobiele Apparaten}{Challenges for Pose Estimation on Mobile Devices}}%
-\label{subsec:uitdagingen-van-pose-estimation-op-mobiele-apparaten}
 \begin{itemize}
     \item \textbf{Beperkte Rekenkracht}: 
     Mobiele apparaten hebben minder hardwarecapaciteit dan servers of computers, waardoor het gebruik van complexe en grote neurale netwerken moeilijk is. Pose estimation-algoritmen vereisen vaak veel rekenkracht, wat kan leiden tot trage prestaties en een hoog energieverbruik \autocite{LiuEtAl2022}.
