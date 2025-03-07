@@ -175,8 +175,6 @@ Ondanks een lichte afname in inference-snelheid door de aandachtmodules en multi
 Kortom, Human Pose Estimation (HPE) is een veelzijdige techniek met brede toepassingen, ondersteund door geavanceerde modellen en aandacht voor uitdagingen zoals occlusies en schaalvariaties. 
 Door de inzet van deep learning-technieken en innovatieve benaderingen blijft het veld zich snel ontwikkelen, met als doel real-time, nauwkeurige en robuuste pose-schatting mogelijk te maken \autocite{DongEtAl2024}.
 
-%%
-
 Technologieën zoals OpenPose, PoseNet en MoveNet bieden groot potentieel voor toepassingen op mobiele apparaten. 
 Deze methoden schatten poses door middel van deep learning op basis van camerainput, waardoor er geen extra sensoren nodig zijn en ze breed inzetbaar zijn op de meeste apparaten. 
 Ondanks dat OpenPose ongeveer 12 keer langzamer is dan MoveNet, heeft het als voordeel dat het de poses van meerdere personen tegelijk kan schatten. PoseNet blinkt uit in nauwkeurigheid, terwijl MoveNet Lightning het snelste model is.
@@ -210,3 +208,29 @@ MoveNet is een bottom-up model dat gebaseerd is op CenterNet en alle vier proces
 Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. 
 MoveNet Lightning is het snelste model, terwijl Thunder zich onderscheidt door een hogere nauwkeurigheid \autocite{BeomjunEtAl2022}. 
 
+
+\subsection{\IfLanguageName{dutch}{Uitdagingen van Pose Estimation op Mobiele Apparaten}{Challenges for Pose Estimation on Mobile Devices}}%
+\label{subsec:uitdagingen-van-pose-estimation-op-mobiele-apparaten}
+\begin{itemize}
+    \item \textbf{Beperkte Rekenkracht}: \\
+    Mobiele apparaten hebben minder hardwarecapaciteit dan servers of computers, waardoor het gebruik van complexe en grote neurale netwerken moeilijk is. Pose estimation-algoritmen vereisen vaak veel rekenkracht, wat kan leiden tot trage prestaties en een hoog energieverbruik \autocite{LiuEtAl2022}.
+
+    \item \textbf{Modelgrootte}: \\
+    Voor mobiele toepassingen moeten modellen compact zijn om efficiënt te kunnen draaien. Grote modellen zijn vaak niet geschikt vanwege beperkte opslag en geheugen op mobiele apparaten \autocite{HouEtAl2020}.
+
+    \item \textbf{Real-time Prestaties}: \\
+    Pose estimation moet in real-time werken, vooral voor toepassingen zoals fitness-tracking of augmented reality. Vertragingen kunnen de gebruikerservaring negatief beïnvloeden \autocite{HouEtAl202}.
+
+    \item \textbf{Wisselende Omstandigheden}: \\
+    Mobiele apparaten worden in diverse omgevingen gebruikt, wat pose estimation uitdagend maakt. Factoren zoals camerarotaties, wisselende belichting, en occlusies (bijvoorbeeld wanneer lichaamsdelen elkaar overlappen) kunnen de nauwkeurigheid verminderen \autocite{SulongEtAl2023}.
+
+    \item \textbf{Beperkte Trainingsdata}: \\
+    Het verzamelen van voldoende en gevarieerde trainingsdata is een uitdaging, wat de nauwkeurigheid van modellen kan beperken. Dit geldt vooral voor scenario’s met ongebruikelijke poses of achtergronden \autocite{PauloEtAl2024}.
+
+    \item \textbf{Nauwkeurigheidsproblemen}: \\
+    Beeldvervorming, achtergrondruis of complexe objecten kunnen de nauwkeurigheid van pose estimation beïnvloeden. Dit is vooral problematisch bij objecten met ongebruikelijke vormen of structuren \autocite{SulongEtAl2023}.
+\end{itemize}
+
+Om de uitdagingen van pose estimation op mobiele apparaten het hoofd te bieden, zijn enkele praktische stappen nodig. Ten eerste is het belangrijk om een lichtgewicht model te kiezen dat minder rekenkracht vereist, maar toch goede prestaties levert. Dit maakt het mogelijk om real-time resultaten te behalen op mobiele hardware. Daarnaast moet het model getraind worden op diverse omstandigheden, zoals wisselende belichting, camerahoeken en occlusies, om de nauwkeurigheid in verschillende omgevingen te waarborgen.
+\medskip
+Ook is het nuttig om best practices voor training toe te passen, zoals het gebruik van synthetische data of transfer learning, vooral als er beperkte trainingsdata beschikbaar is. Dit helpt om het model robuuster en nauwkeuriger te maken. Ten slotte kan het gebruik van beschikbare tools en frameworks het proces vereenvoudigen, waardoor het trainen en implementeren van het model efficiënter verloopt.
