@@ -169,5 +169,38 @@ Ondanks een lichte afname in inference-snelheid door de aandachtmodules en multi
 Kortom, Human Pose Estimation (HPE) is een veelzijdige techniek met brede toepassingen, ondersteund door geavanceerde modellen en aandacht voor uitdagingen zoals occlusies en schaalvariaties. 
 Door de inzet van deep learning-technieken en innovatieve benaderingen blijft het veld zich snel ontwikkelen, met als doel real-time, nauwkeurige en robuuste pose-schatting mogelijk te maken \autocite{DongEtAl2024}.
 
+%%
 
+Technologieën zoals OpenPose, PoseNet en MoveNet bieden groot potentieel voor toepassingen op mobiele apparaten. 
+Deze methoden schatten poses door middel van deep learning op basis van camerainput, waardoor er geen extra sensoren nodig zijn en ze breed inzetbaar zijn op de meeste apparaten. 
+Ondanks dat OpenPose ongeveer 12 keer langzamer is dan MoveNet, heeft het als voordeel dat het de poses van meerdere personen tegelijk kan schatten. PoseNet blinkt uit in nauwkeurigheid, terwijl MoveNet Lightning het snelste model is.
+Deze technologieën openen de deur naar innovatieve toepassingen en verbeterde gebruikerservaringen op mobiele apparaten \autocite{BeomjunEtAl2022}.
+
+OpenPose was het eerste model dat realtime poseschatting voor meerdere personen mogelijk maakte. 
+OpenPose maakt gebruik van een bottom-up methode, waarmee het de beperkingen van de traditionele top-down aanpak overwint. 
+Dit model schat poses via deep learning op basis van camerainput, waardoor er geen extra sensoren nodig zijn en het breed toepasbaar is op de meeste apparaten. 
+Een belangrijk kenmerk van OpenPose is dat het de poses van meerdere personen tegelijk kan schatten. 
+Het model ondersteunt 137 keypoints: 25 voor het lichaam (inclusief de voeten), 21 voor elke hand en 70 voor het gezicht.
+OpenPose maakt gebruik van Part Affinity Fields (PAFs), een set van flow-velden die de relaties tussen lichaamsdelen van meerdere personen weergeven \autocite{KanaseEtAl2021}.  
+Hoewel het model 12 keer langzamer is dan MoveNet, blinkt het uit in het nauwkeurig identificeren van meerdere personen en het schatten van hun poses binnen een afbeelding. 
+Het herkent ook het verschil tussen objecten in één fase en vertoont een hoge prestatienauwkeurigheid.
+OpenPose is een krachtig hulpmiddel voor realtime poseschatting, vooral in scenario's waarbij meerdere personen moeten worden geanalyseerd \autocite{BeomjunEtAl2022}.
+
+PoseNet is een open source machine learning-model ontwikkeld door Google Creative Lab, ontworpen om menselijke poses in realtime te schatten. 
+Het model maakt gebruik van de COCO person key-point detection dataset, die de belangrijkste punten van het hele lichaam volgt. 
+Voor single-person poseschatting gebruikt PoseNet vier invoerelementen: een inputafbeelding, een image scale factor, een horizontale flip en een output stride. 
+Het single-person detection algoritme is sneller en eenvoudiger dan het multi-person detection algoritme. 
+PoseNet is ook beschikbaar voor mobiele apparaten via TensorFlow Lite, waardoor het compatibel is met Android en iOS. 
+PoseNet maakt gebruik van de top-down methode, waarbij eerst een persoon wordt gedetecteerd en vervolgens de pose binnen de bounding box wordt geschat. 
+Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. 
+PoseNet behaalde de hoogste nauwkeurigheid en had de kleinste standaarddeviatie, wat wijst op een consistente prestatie tussen runs \autocite{BeomjunEtAl2022}.
+
+MoveNet is een op Google gebaseerd inferentiemodel, ontwikkeld door IncludeHealth, een digitaal gezondheidsbedrijf.
+Het model is beschikbaar in twee versies: een webversie die gebruikmaakt van TensorFlow.js en een mobiele versie die draait op TensorFlow Lite. 
+MoveNet kent twee varianten: Lightning, gericht op prestaties, en Thunder, gericht op nauwkeurigheid. 
+Lightning ontvangt een video of afbeelding van een vaste grootte (192\times192) met drie kanalen en gebruikt een dieptemultiplier van 1.0. 
+Thunder daarentegen ontvangt een input van 256\times256 met drie kanalen en gebruikt een dieptemultiplier van 1.75, wat betekent dat het 1.75 keer meer lagen voor deep learning heeft en daardoor meer berekeningen uitvoert.
+MoveNet is een bottom-up model dat gebaseerd is op CenterNet en alle vier processen gelijktijdig berekent. 
+Het model biedt in totaal 17 key-points: 5 in het gezicht en 12 in het lichaam. 
+MoveNet Lightning is het snelste model, terwijl Thunder zich onderscheidt door een hogere nauwkeurigheid \autocite{BeomjunEtAl2022}. 
 
