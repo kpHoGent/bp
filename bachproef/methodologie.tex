@@ -26,5 +26,102 @@
 %% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
 %% en geef het een gepaste titel.
 
-\lipsum[21-25]
+In dit hoofdstuk wordt de methodologie van het onderzoek toegelicht. Het onderzoek is opgedeeld in verschillende fasen, elk met een specifieke doelstelling, deliverables en onderzoeksmethoden. Hieronder worden deze fasen kort beschreven, gevolgd door een verantwoording van de gekozen aanpak.
+
+\section{Fase 1: Literatuurstudie}
+\subsection{Doelstelling}
+Het doel van deze fase is om een grondig overzicht te krijgen van de bestaande technologieën en methoden voor pose estimation en bewegingsanalyse, evenals de meest voorkomende krachttrainingsoefeningen.  
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Een overzicht van de meest geschikte pose estimation-frameworks.
+    \item Een lijst van relevante parameters voor bewegingsvergelijking.
+    \item Een selectie van de meest voorkomende krachttrainingsoefeningen.
+\end{itemize}
+
+\subsection{Onderzoeksmethode}
+Er wordt een uitgebreide literatuurstudie uitgevoerd, waarbij wetenschappelijke artikelen, technische documentatie en case studies worden geanalyseerd. De focus ligt op het identificeren van de meest geschikte technologieën en het bepalen van de relevante parameters voor bewegingsanalyse.  
+
+\subsection{Verantwoording}
+Een literatuurstudie is essentieel om een solide theoretische basis te leggen voor het onderzoek. Het biedt inzicht in de huidige stand van de techniek en helpt bij het maken van gefundeerde keuzes voor de volgende fasen.  
+
+\section{Fase 2: Dataverzameling}
+\subsection{Doelstelling}
+Het doel van deze fase is het verzamelen van beeldmateriaal van de geselecteerde krachttrainingsoefeningen, dat gebruikt zal worden voor het trainen en testen van het deep learning-model.  
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Een dataset van gelabelde videobeelden van krachttrainingsoefeningen.
+\end{itemize}
+
+\subsection{Onderzoeksmethode}
+Er wordt gebruik gemaakt van online beschikbaar beeldmateriaal, zoals video’s van fitnessinstructeurs en openbare datasets. De verzamelde data wordt gelabeld en geannoteerd om deze geschikt te maken voor training en validatie van het model.  
+
+\subsection{Verantwoording}
+Een kwalitatieve dataset is cruciaal voor het trainen van een nauwkeurig deep learning-model. Door gebruik te maken van bestaand beeldmateriaal wordt tijd bespaard, terwijl de dataset toch voldoende divers en representatief is.  
+
+\section{Fase 3: Ontwikkeling van het deep learning-model}
+\subsection{Doelstelling}
+Het doel van deze fase is het ontwikkelen en trainen van een deep learning-model dat in staat is om krachttrainingsoefeningen te herkennen en te analyseren.  
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Een getraind deep learning-model voor pose estimation en bewegingsanalyse.
+\end{itemize}
+
+\subsection{Onderzoeksmethode}
+Het model wordt ontwikkeld met behulp van een geschikt pose estimation-framework (bijvoorbeeld OpenPose, PoseNet of MoveNet). Het model wordt getraind op de verzamelde dataset en geoptimaliseerd voor nauwkeurigheid en snelheid.  
+
+\subsection{Verantwoording}
+Deep learning is de meest geschikte methode voor het analyseren van complexe bewegingspatronen. Door een bestaand framework te gebruiken, wordt de ontwikkelingstijd verkort en kan worden voortgebouwd op bewezen technologieën.  
+
+\section{Fase 4: Testen en valideren van het model}
+\subsection{Doelstelling}
+Het doel van deze fase is het testen en valideren van het ontwikkelde model om de nauwkeurigheid en betrouwbaarheid te waarborgen.  
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Een getest en gevalideerd deep learning-model.
+    \item Een rapport met de testresultaten en validatiemethoden.
+\end{itemize}
+
+\subsection{Onderzoeksmethode}
+Het model wordt getest met een deel van de dataset dat niet gebruikt is tijdens de trainingsfase. De prestaties van het model worden geëvalueerd op basis van metriek zoals precisie, recall en F1-score.  
+
+\subsection{Verantwoording}
+Testen en valideren zijn essentieel om de betrouwbaarheid van het model te garanderen. Door een aparte testset te gebruiken, wordt voorkomen dat het model overfit raakt op de trainingsdata.  
+
+\section{Fase 5: Ontwikkeling van de mobiele applicatie}
+\subsection{Doelstelling}
+Het doel van deze fase is het ontwikkelen van een mobiele applicatie die gebruikers in staat stelt om videobeelden van krachtoefeningen te vergelijken met referentiemateriaal en real-time feedback te ontvangen.  
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Een functionele mobiele applicatie met een gebruiksvriendelijke interface.
+\end{itemize}
+
+\subsection{Onderzoeksmethode}
+De applicatie wordt ontwikkeld met behulp van een geschikt mobiel ontwikkelingsframework (bijvoorbeeld Flutter of React Native). Het getrainde deep learning-model wordt geïntegreerd in de applicatie om bewegingspatronen te analyseren en feedback te genereren.  
+
+\subsection{Verantwoording}
+Een mobiele applicatie maakt de technologie toegankelijk voor een breed publiek, waaronder personal trainers en fitnesscoaches. Door een gebruiksvriendelijke interface te ontwikkelen, wordt de adoptie van de applicatie bevorderd.  
+
+\section{Fase 6: Evaluatie en conclusie}
+\subsection{Doelstelling}
+Het doel van deze fase is het evalueren van de applicatie en het formuleren van conclusies op basis van de behaalde resultaten.  
+
+\subsection{Deliverables}
+\begin{itemize}
+    \item Een evaluatierapport met de prestaties van de applicatie.
+    \item Conclusies en aanbevelingen voor toekomstig onderzoek.
+\end{itemize}
+
+\subsection{Onderzoeksmethode}
+De applicatie wordt getest door een groep gebruikers (bijvoorbeeld personal trainers en fitnesscoaches) om feedback te verzamelen over de functionaliteit en gebruiksvriendelijkheid. De resultaten worden geanalyseerd en gebruikt om conclusies te trekken.  
+
+\subsection{Verantwoording}
+Evaluatie door eindgebruikers is essentieel om de praktische bruikbaarheid van de applicatie te waarborgen. De feedback van gebruikers biedt waardevolle inzichten voor verdere verbeteringen.  
+
+\section{Verantwoording van de gekozen aanpak}
+De gekozen methodologie is gebaseerd op een gestructureerde en iteratieve aanpak, waarbij elke fase voortbouwt op de resultaten van de vorige fase. Door te beginnen met een literatuurstudie wordt een solide theoretische basis gelegd, waarna de focus verschuift naar de praktische ontwikkeling en validatie van het model en de applicatie. Deze aanpak zorgt voor een efficiënte en effectieve uitvoering van het onderzoek, met als resultaat een bruikbare en betrouwbare mobiele applicatie.
 
