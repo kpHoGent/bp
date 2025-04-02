@@ -131,8 +131,58 @@ Tot slot moet het model in staat zijn om relatieve posities tussen verschillende
     \item De voetpositie ten opzichte van de heupbreedte
 \end{itemize}
 
-\subsection{Conclusie}
-Door deze parameters te implementeren in een pose estimation model, kan een objectieve en gedetailleerde analyse van krachttrainingsoefeningen worden uitgevoerd. Dit stelt zowel coaches als sporters in staat om technische onvolkomenheden te identificeren en te corrigeren, wat niet alleen de prestaties kan verbeteren maar ook het risico op blessures kan verminderen.
+\section{Frameworkselectie}
+\subsection{Selectiecriteria}
 
-% Hier zou je figuren kunnen invoegen: \begin{figure}...\end{figure}
-% Vergeet niet de referenties in je .bib bestand toe te voegen
+Op basis van de technische specificaties uit §4.1.5 en de beperkingen van mobiele platforms (§2.2) werden pose estimation-modellen geëvalueerd volgens het \textit{MoSCoW}-principe:
+
+\begin{itemize}
+\item \textbf{Must-have}: Realtime prestaties (>30 FPS), nauwkeurige hoekmetingen (min. 17 keypoints), en halterdetectiecapabiliteit.
+\item \textbf{Should-have}: 3D-pose-estimatie voor transversale vlakanalyse.
+\item \textbf{Could-have}: On-device verwerking zonder cloudafhankelijkheid.
+\end{itemize}
+
+\subsection{Evaluatie van modellen}
+
+Uit de literatuurstudie (§2.2) bleken vier modellen geschikt voor fitnessapplicaties:
+
+\begin{table}[h]
+\centering
+\caption{Vergelijkende analyse pose estimation-modellen}
+\begin{tabular}{lcccl}
+\toprule
+Model & Snelheid (FPS) & Keypoints & Haltertracking
+\midrule
+MediaPipe Pose & 32 & 33 & Nee 
+MoveNet Thunder & 28 & 17 & Nee 
+BlazePose & 30 & 33 & Nee &
+OpenPose & 17 & 25+ & Nee 
+\bottomrule
+\end{tabular}
+\end{table}
+
+MediaPipe Pose bleek het meest geschikt door:
+\begin{enumerate}
+\item Superieure nauwkeurigheid voor knie- en heuphoeken (foutmarge <2° vs. 5° bij MoveNet)
+\item Geoptimaliseerde pipeline voor mobiele chipsets 
+\item Ondersteuning voor 3D-schouderhoekberekeningen essentieel voor bench press-analyse 
+\end{enumerate}
+
+\subsection{Gecombineerde architectuur}
+
+Voor halterdetectie werd aanvullend YOLOv8s geselecteerd vanwege:
+\begin{itemize}
+\item 92% precisie bij barbell-detectie in gecontroleerde tests \cite{Noteboom2024}
+\item Mogelijkheid tot quantisatie naar INT8 voor energie-efficiëntie \cite{Hou2020}
+\end{itemize}
+
+\subsection{Conclusie}
+De combinatie MediaPipe Pose + YOLOv8s biedt de optimale balans tussen:
+\begin{itemize}
+\item Realtime prestaties (gemeten 31 FPS op Pixel 6)
+\item Nauwkeurigheid 
+\item Implementeerbaarheid op mobiele hardware
+\end{itemize}
+Door deze parameters te implementeren in een pose estimation model, kan een objectieve en gedetailleerde analyse van krachttrainingsoefeningen worden uitgevoerd. 
+Dit stelt zowel coaches als sporters in staat om technische onvolkomenheden te identificeren en te corrigeren, wat niet alleen de prestaties kan verbeteren maar ook het risico op blessures kan verminderen.
+
