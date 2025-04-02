@@ -151,11 +151,10 @@ Uit de literatuurstudie (§2.2) bleken vier modellen geschikt voor fitnessapplic
 \caption{Vergelijkende analyse pose estimation-modellen}
 \begin{tabular}{lcccl}
 \toprule
-Model & Snelheid (FPS) & Keypoints & Haltertracking
+Model & Snelheid (FPS) & Keypoints & Haltertracking \\
 \midrule
-MediaPipe Pose & 32 & 33 & Nee 
-MoveNet Thunder & 28 & 17 & Nee 
-BlazePose & 30 & 33 & Nee &
+MediaPipe Pose (BlazePose) & 32 & 33 & Nee \\
+MoveNet Thunder & 28 & 17 & Nee \\
 OpenPose & 17 & 25+ & Nee 
 \bottomrule
 \end{tabular}
@@ -172,8 +171,8 @@ MediaPipe Pose bleek het meest geschikt door:
 
 Voor halterdetectie werd aanvullend YOLOv8s geselecteerd vanwege:
 \begin{itemize}
-\item 92% precisie bij barbell-detectie in gecontroleerde tests \cite{Noteboom2024}
-\item Mogelijkheid tot quantisatie naar INT8 voor energie-efficiëntie \cite{Hou2020}
+\item 92\% precisie bij barbell-detectie in gecontroleerde tests 
+\item Mogelijkheid tot quantisatie naar INT8 voor energie-efficiëntie 
 \end{itemize}
 
 \subsection{Conclusie}
