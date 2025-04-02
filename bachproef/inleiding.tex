@@ -5,20 +5,33 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-Met de toenemende populariteit van fitness en krachttraining is er een groeiende vraag naar effectieve en flexibele manieren om cliënten op afstand te begeleiden. Personal trainers en fitnesscoaches zoeken naar innovatieve oplossingen om hun cliënten te ondersteunen zonder dat fysieke aanwezigheid vereist is. Videobeelden bieden een unieke kans om de uitvoering van oefeningen nauwkeurig te analyseren en te vergelijken met referentiemateriaal, wat waardevolle feedback oplevert over de correcte technische uitvoering van deze oefeningen.
+Met de toenemende populariteit van fitness en krachttraining is er een groeiende vraag naar effectieve en flexibele manieren om cliënten op afstand te begeleiden. 
+Personal trainers en fitnesscoaches zoeken naar innovatieve oplossingen om hun cliënten te ondersteunen zonder dat fysieke aanwezigheid vereist is. 
+Videobeelden bieden een unieke kans om de uitvoering van oefeningen nauwkeurig te \mbox{analyseren} en te vergelijken met referentiemateriaal, wat waardevolle feedback oplevert over de correcte technische uitvoering van deze oefeningen.
+
 \medskip
-Traditionele begeleidingsmethoden, zoals geschreven instructies of statische afbeeldingen, schieten vaak tekort in het bieden van nauwkeurige feedback. Dit kan leiden tot onnauwkeurige bewegingen, minder optimale trainingsresultaten en een verhoogd risico op blessures. Een mobiele applicatie die bewegingspatronen kan analyseren en vergelijken met referentievideo’s zou een doorbraak kunnen betekenen voor zowel zelfstandige personal trainers als fitnesscentra.
+
+Traditionele begeleidingsmethoden, zoals geschreven instructies of statische \mbox{afbeeldingen}, schieten vaak tekort in het bieden van nauwkeurige feedback. 
+Dit kan leiden tot onnauwkeurige bewegingen, minder optimale trainingsresultaten en een verhoogd risico op blessures. 
+Een mobiele applicatie die bewegingspatronen kan analyseren en vergelijken met referentievideo’s zou een doorbraak kunnen betekenen voor zowel zelfstandige personal trainers als fitnesscentra.
+
 \medskip
+
 Dit onderzoek richt zich op de ontwikkeling van een mobiele applicatie die gebruik maakt van geavanceerde pose estimation-technologieën om bewegingspatronen te analyseren en te vergelijken met referentiemateriaal. De focus ligt op krachttrainingsoefeningen, waarbij de applicatie feedback geeft over de nauwkeurigheid van de uitvoering op basis van parameters zoals gewrichtshoeken en bewegingssnelheid.
+
 \medskip
+
 De keuze voor dit onderwerp is ingegeven door de groeiende behoefte aan innovatieve oplossingen in de fitness- en trainingssector. Door gebruik te maken van deep learning en pose estimation-technologieën kan een applicatie ontwikkeld worden die niet alleen de technische uitvoering van oefeningen analyseert, maar ook real-time feedback biedt. Dit draagt bij aan het verbeteren van trainingsresultaten, het minimaliseren van blessures en het bieden van flexibele begeleiding op afstand.
+
 \medskip
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
 Het ontbreken van nauwkeurige en directe feedback bij traditionele begeleidingsmethoden leidt tot onnauwkeurige uitvoering van oefeningen en een verhoogd risico op blessures. Dit probleem is vooral relevant voor personal trainers en fitnesscoaches die hun cliënten op afstand willen begeleiden. Een mobiele applicatie die bewegingspatronen analyseert en vergelijkt met referentiemateriaal kan een oplossing bieden voor deze uitdaging.
+
 \medskip
+
 De doelgroep van dit onderzoek bestaat uit personal trainers, fitnesscoaches en fitnesscentra die hun cliënten op afstand willen ondersteunen. Daarnaast kan de applicatie ook worden gebruikt door individuele sporters die hun techniek willen verbeteren.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
@@ -27,24 +40,34 @@ De doelgroep van dit onderzoek bestaat uit personal trainers, fitnesscoaches en 
 De centrale onderzoeksvraag luidt als volgt:
 
 \begin{itemize}
-    \item Hoe kan een applicatie worden ontwikkeld die bewegingspatronen van cliënten effectief analyseert en vergelijkt met referentievideo’s om nauwkeurige feedback te geven op de uitvoering van krachtoefeningen?  
+    \item Hoe kan een applicatie worden ontwikkeld die bewegingspatronen van \mbox{cliënten} effectief analyseert en vergelijkt met referentievideo’s om \mbox{nauwkeurige} feedback te geven op de uitvoering van krachtoefeningen?  
 \end{itemize}
 
-Om deze hoofdvraag te beantwoorden, worden de volgende deelvragen geformuleerd:
+Om deze hoofdvraag te beantwoorden, worden de volgende deelvragen \mbox{geformuleerd}:
 
 \begin{itemize}
     \item Welke bestaande technologieën zijn het meest geschikt voor het herkennen en analyseren van menselijke bewegingspatronen in een mobiele applicatie?
     \item Welke parameters zijn het meest relevant voor het nauwkeurig vergelijken van bewegingen tussen de referentievideo en de video van de cliënt?
-    \item Hoe kan een algoritme worden ontwikkeld dat verschillen in uitvoering detecteert en bruikbare feedback genereert?
-    \item Hoe kan de nauwkeurigheid van de videovergelijkingen worden getest en gevalideerd?
+    \item Hoe kan een algoritme worden ontwikkeld dat verschillen in uitvoering \mbox{detecteert} en bruikbare feedback genereert?
+    \item Hoe kan de nauwkeurigheid van de videovergelijkingen worden getest en \mbox{gevalideerd}?
 \end{itemize}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Het doel van dit onderzoek is het ontwikkelen van een gebruiksvriendelijke, technisch haalbare mobiele applicatie die personal trainers en fitnesscoaches in staat stelt om nauwkeurige bewegingsfeedback te geven aan hun cliënten. De applicatie moet in staat zijn om videobeelden van krachtoefeningen te analyseren en te vergelijken met referentiemateriaal, waarbij relevante parameters zoals gewrichtshoeken en bewegingssnelheid worden gebruikt om feedback te genereren.
+Het doel van dit onderzoek is het ontwikkelen van een gebruiksvriendelijke, \mbox{technisch} haalbare mobiele applicatie die personal trainers en fitnesscoaches in staat stelt om nauwkeurige bewegingsfeedback te geven aan hun cliënten. 
 
-Het beoogde resultaat is een prototype van de applicatie dat getest en gevalideerd is op basis van een dataset van krachttrainingsoefeningen. De applicatie moet voldoen aan de volgende criteria:
+\medskip
+
+De applicatie moet in staat zijn om videobeelden van krachtoefeningen te analyseren en te vergelijken met referentiemateriaal, waarbij relevante parameters zoals gewrichtshoeken en bewegingssnelheid worden gebruikt om feedback te genereren.
+
+\medskip
+
+Het beoogde resultaat is een prototype van de applicatie dat getest en gevalideerd is op basis van een dataset van krachttrainingsoefeningen. 
+
+\medskip
+
+De applicatie moet voldoen aan de volgende criteria:
 \begin{itemize}
     \item Nauwkeurige detectie en analyse van bewegingspatronen.
     \item Vergelijking van bewegingen met referentievideo’s op basis van relevante parameters.
