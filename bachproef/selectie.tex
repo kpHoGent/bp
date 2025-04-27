@@ -147,18 +147,19 @@ Op basis van de technische specificaties uit §4.1.5 en de beperkingen van mobie
 Uit de literatuurstudie (§2.2) bleken vier modellen geschikt voor fitnessapplicaties:
 
 \begin{table}[h]
-\centering
-\caption{Vergelijkende analyse pose estimation-modellen}
-\begin{tabular}{lcccl}
-\toprule
-Model & Snelheid (FPS) & Keypoints & Haltertracking \\
-\midrule
-MediaPipe Pose (BlazePose) & 32 & 33 & Nee \\
-MoveNet Thunder & 28 & 17 & Nee \\
-OpenPose & 17 & 25+ & Nee 
-\bottomrule
-\end{tabular}
-\end{table}
+    \centering
+    \caption{Vergelijkende analyse pose estimation-modellen}
+    \begin{tabular}{lcccl}
+    \toprule
+    Model & Snelheid (FPS) & Keypoints & Haltertracking \\
+    \midrule
+    MediaPipe Pose (BlazePose) & 32 & 33 & Nee \\
+    MoveNet Thunder & 28 & 17 & Nee \\
+    OpenPose & 17 & 25+ & Nee \\  % <-- Cruciale `\\` toegevoegd
+    \bottomrule
+    \end{tabular}
+    \label{tab:pose_models}  % Optioneel: voor verwijzingen in de tekst
+    \end{table}
 
 MediaPipe Pose bleek het meest geschikt door:
 \begin{enumerate}
