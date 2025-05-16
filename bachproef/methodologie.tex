@@ -47,80 +47,73 @@ Een literatuurstudie is essentieel om een solide theoretische basis te leggen vo
 
 \section{Fase 2: Dataverzameling}
 \subsection{Doelstelling}
-Het doel van deze fase is het verzamelen van beeldmateriaal van de geselecteerde krachttrainingsoefeningen, dat gebruikt zal worden voor het trainen en testen van het deep learning-model.  
+Het doel van deze fase is het verzamelen van videobeelden van de geselecteerde krachttrainingsoefeningen (zie Fase 1), zowel correcte als incorrecte uitvoeringen. 
+Deze beelden vormen de basis voor het analyseren en vergelijken van bewegingspatronen in latere fasen.
 
 \subsection{Deliverables}
 \begin{itemize}
-    \item Een dataset van gelabelde videobeelden van krachttrainingsoefeningen.
+    \item Een eigen samengestelde dataset met gelabelde videobeelden van correcte en incorrecte uitvoering van krachttrainingsoefeningen.
 \end{itemize}
 
 \subsection{Onderzoeksmethode}
-Er wordt gebruik gemaakt van online beschikbaar beeldmateriaal, zoals video’s van fitnessinstructeurs en openbare datasets. De verzamelde data wordt gelabeld en geannoteerd om deze geschikt te maken voor training en validatie van het model.  
+Er werd zelf beeldmateriaal opgenomen. Deze opnames zijn systematisch gelabeld en geannoteerd om de variaties in uitvoering correct in kaart te brengen.
 
 \subsection{Verantwoording}
-Een kwalitatieve dataset is cruciaal voor het trainen van een nauwkeurig deep learning-model. Door gebruik te maken van bestaand beeldmateriaal wordt tijd bespaard, terwijl de dataset toch voldoende divers en representatief is.  
+Het zelf opnemen van video’s garandeert controle over camerastandpunten, herhalingen en techniekvariaties. 
+Hierdoor kan gericht beeldmateriaal worden verzameld dat aansluit bij de doelstellingen van het onderzoek en kunnen specifieke scenario’s of fouten bewust worden vastgelegd.
 
-\section{Fase 3: Ontwikkeling van het deep learning-model}
+\section{Fase 3: Analyse en algoritmische verwerking}
 \subsection{Doelstelling}
-Het doel van deze fase is het ontwikkelen en trainen van een deep learning-model dat in staat is om krachttrainingsoefeningen te herkennen en te analyseren.  
+Het doel van deze fase is het ontwikkelen van een analysekader dat videobeelden automatisch vergelijkt met referentie-uitvoeringen, op basis van pose estimation.
 
 \subsection{Deliverables}
 \begin{itemize}
-    \item Een getraind deep learning-model voor pose estimation en bewegingsanalyse.
+    \item Een werkend algoritme dat gebruikersvideo’s vergelijkt met referentiemateriaal op basis van lichaamshoeken en bewegingspatronen.
+    \item Inzichten in prestatieverschillen tussen correcte en incorrecte uitvoeringen.
 \end{itemize}
 
 \subsection{Onderzoeksmethode}
-Het model wordt ontwikkeld met behulp van een geschikt pose estimation-framework (bijvoorbeeld OpenPose, PoseNet of MoveNet). Het model wordt getraind op de verzamelde dataset en geoptimaliseerd voor nauwkeurigheid en snelheid.  
+Het, in de eerste fase geselecteerde, pose estimation-model wordt toegepast op zowel referentie- als gebruikersvideo’s. 
+Op basis van de keypoints worden hoeken tussen gewrichten berekend en vergeleken met behulp van bestaande of nieuw ontwikkelde vergelijkingsalgoritmen.
 
 \subsection{Verantwoording}
-Deep learning is de meest geschikte methode voor het analyseren van complexe bewegingspatronen. Door een bestaand framework te gebruiken, wordt de ontwikkelingstijd verkort en kan worden voortgebouwd op bewezen technologieën.  
+Door gebruik te maken van een bestaand, nauwkeurig pose estimation-model wordt de nadruk verlegd van modelontwikkeling naar domeinspecifieke analyse. 
+De focus ligt op het correct interpreteren van bewegingen in de context van krachttraining.  
 
-\section{Fase 4: Testen en valideren van het model}
+\section{Fase 4: Proof of Concept applicatie}
 \subsection{Doelstelling}
-Het doel van deze fase is het testen en valideren van het ontwikkelde model om de nauwkeurigheid en betrouwbaarheid te waarborgen.  
+Het doel van deze fase is het ontwikkelen van een werkend prototype dat de resultaten van Fase 3 integreert in een mobiele omgeving.
 
 \subsection{Deliverables}
 \begin{itemize}
-    \item Een getest en gevalideerd deep learning-model.
-    \item Een rapport met de testresultaten en validatiemethoden.
+    \item Een functioneel prototype dat krachttrainingstechnieken visueel vergelijkt en feedback genereert, bruikbaar op mobiele apparaten.
 \end{itemize}
 
 \subsection{Onderzoeksmethode}
-Het model wordt getest met een deel van de dataset dat niet gebruikt is tijdens de trainingsfase. De prestaties van het model worden geëvalueerd op basis van metriek zoals precisie, recall en F1-score.  
+De PoC wordt gebouwd met behulp van een mobiel ontwikkelframework (zoals Flutter of React Native). 
+Het pose estimation-model en de analysealgoritmen uit Fase 3 worden geïntegreerd. 
+De nadruk ligt op functionele demonstratie, niet op volledige app-ontwikkeling.
 
 \subsection{Verantwoording}
-Testen en valideren zijn essentieel om de betrouwbaarheid van het model te garanderen. Door een aparte testset te gebruiken, wordt voorkomen dat het model overfit raakt op de trainingsdata.  
-
-\section{Fase 5: Ontwikkeling van de mobiele applicatie}
-\subsection{Doelstelling}
-Het doel van deze fase is het ontwikkelen van een mobiele applicatie die gebruikers in staat stelt om videobeelden van krachtoefeningen te vergelijken met referentiemateriaal en real-time feedback te ontvangen.  
-
-\subsection{Deliverables}
-\begin{itemize}
-    \item Een functionele mobiele applicatie met een gebruiksvriendelijke interface.
-\end{itemize}
-
-\subsection{Onderzoeksmethode}
-De applicatie wordt ontwikkeld met behulp van een geschikt mobiel ontwikkelingsframework (bijvoorbeeld Flutter of React Native). Het getrainde deep learning-model wordt geïntegreerd in de applicatie om bewegingspatronen te analyseren en feedback te genereren.  
-
-\subsection{Verantwoording}
-Een mobiele applicatie maakt de technologie toegankelijk voor een breed publiek, waaronder personal trainers en fitnesscoaches. Door een gebruiksvriendelijke interface te ontwikkelen, wordt de adoptie van de applicatie bevorderd.  
+Een proof-of-concept laat toe om de toepasbaarheid van het ontwikkelde algoritme in een realistische mobiele context te testen. 
+Dit vormt een waardevolle stap richting een volwaardige toepassing.
 
 \section{Fase 6: Evaluatie en conclusie}
 \subsection{Doelstelling}
-Het doel van deze fase is het evalueren van de applicatie en het formuleren van conclusies op basis van de behaalde resultaten.  
+Het doel van deze fase is het evalueren in hoeverre het ontwikkelde analysekader en het prototype voldoen aan de verwachtingen voor het automatisch analyseren van krachttrainingstechniek.
 
 \subsection{Deliverables}
 \begin{itemize}
-    \item Een evaluatierapport met de prestaties van de applicatie.
-    \item Conclusies en aanbevelingen voor toekomstig onderzoek.
+    \item Een evaluatierapport met sterktes, beperkingen en aanbevelingen.
+    \item Conclusies over de haalbaarheid van automatische techniekvergelijking op mobiele apparaten.
 \end{itemize}
 
 \subsection{Onderzoeksmethode}
-De applicatie wordt getest door een groep gebruikers (bijvoorbeeld personal trainers en fitnesscoaches) om feedback te verzamelen over de functionaliteit en gebruiksvriendelijkheid. De resultaten worden geanalyseerd en gebruikt om conclusies te trekken.  
+De proof-of-concept wordt getoetst aan vooraf gedefinieerde criteria, waaronder nauwkeurigheid van feedback, consistentie van analyse en bruikbaarheid. 
 
 \subsection{Verantwoording}
-Evaluatie door eindgebruikers is essentieel om de praktische bruikbaarheid van de applicatie te waarborgen. De feedback van gebruikers biedt waardevolle inzichten voor verdere verbeteringen.  
+Deze evaluatie vormt de brug tussen technische implementatie en praktische toepasbaarheid. 
+De bevindingen kunnen richting geven aan verdere ontwikkeling en wetenschappelijk onderzoek.
 
 \section{Verantwoording van de gekozen aanpak}
 De gekozen methodologie is gebaseerd op een gestructureerde en iteratieve aanpak, waarbij elke fase voortbouwt op de resultaten van de vorige fase. Door te beginnen met een literatuurstudie wordt een solide theoretische basis gelegd, waarna de focus verschuift naar de praktische ontwikkeling en validatie van het model en de applicatie. Deze aanpak zorgt voor een efficiënte en effectieve uitvoering van het onderzoek, met als resultaat een bruikbare en betrouwbare mobiele applicatie.
