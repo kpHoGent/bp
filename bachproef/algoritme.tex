@@ -1,0 +1,110 @@
+\chapter{Analyse en algoritmische verwerking}
+\label{ch:algoritme}
+
+\section{Hoekberekening op basis van keypoints}
+Frame per frame worden specifieke hoeken tussen de opeenvolgende gewrichten van de rechterzijde van het lichaam berekend.
+Voor alle drie de geanalyseerde oefeningen - \textit{bench press}, \textit{deadlift} en \textit{squat} - zijn vier hoeken bijzonder relevant om de uitvoering te vergelijken:
+
+\begin{enumerate}
+    \item \textbf{Schouder–Elleboog–Pols:} $\angle(\text{RS}, \text{RE}, \text{RW})$ \\
+    Relevante hoek om de oriëntatie van de onderarm ten opzichte van de bovenarm te analyseren. Deze hoek wordt gebruikt om afwijkingen zoals een te hoge elleboogpositie of een te smalle grip te detecteren.
+    
+    \item \textbf{Elleboog–Schouder–Heup:} $\angle(\text{RE}, \text{RS}, \text{RH})$ \\
+    Belangrijk om de houding van de bovenarm en romp te evalueren, en om te beoordelen of de armen goed aansluiten bij het bovenlichaam.
+
+    \item \textbf{Schouder–Heup–Knie:} $\angle(\text{RS}, \text{RH}, \text{RK})$ \\
+    Deze hoek is cruciaal om de romphelling en rugintegriteit te beoordelen, zoals bij het detecteren van een gebogen rug tijdens de deadlift of squat, of bij het controleren of het bekken in contact blijft met de bank tijdens de bench press.
+
+    \item \textbf{Heup–Knie–Enkel:} $\angle(\text{RH}, \text{RK}, \text{RA})$ \\
+    Wordt gebruikt om de beenpositie en de diepte van buigingen te beoordelen. Deze hoek helpt bij het detecteren van onvoldoende hurking of te gestrekte benen.
+\end{enumerate}
+
+Door deze vier hoeken systematisch te berekenen voor elke frame, verkrijgen we een sequentie van hoekwaarden die gebruikt worden voor verdere vergelijkende analyse via \textit{dynamic time warping} en \textit{cosine similarity}.
+
+\section{Dynamic Time Warping}
+Een belangrijk probleem bij de vergelijking van twee video’s van dezelfde oefening is het feit dat uitvoeringen kunnen variëren in tempo en startpunt. 
+Een sporter kan bijvoorbeeld langzamer of sneller bewegen dan de referentiepersoon, of de beweging kan iets eerder of later starten. 
+Hierdoor ontstaat een misalignment in tijd, waardoor een directe frame-per-frame vergelijking onnauwkeurig of misleidend is.
+
+Om dit probleem op te vangen, wordt gebruik gemaakt van het \textit{Dynamic Time Warping} (DTW) algoritme. 
+Dit algoritme zorgt ervoor dat twee reeksen — in dit geval sequenties van lichaamshoeken — optimaal op elkaar worden uitgelijnd, zelfs als de tijdsverdeling ervan ongelijk is.
+
+DTW berekent het optimale pad tussen twee sequenties door een afstandsmatrix op te stellen waarbij elke cel de afstand tussen twee punten in de sequenties representeert.
+Het algortime zoekt vervolgens naar het pad door deze matrix dat de som van de lokale afstanden minimaliseert, rekening houdend met de mogelijkheid om punten in de sequenties te 'rekken' of 'samentrekken'.
+Zo onstaat een optimale alignatie van het bewegingsverloop, onafhankelijk van uitvoeringssnelheid of startpunt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dtw_example.png}
+    \caption{Voorbeeld van Dynamic Time Warping: twee sequenties worden uitgelijnd om de optimale overeenkomst te vinden.}
+    \label{fig:dtw_example}
+\end{figure}
+
+\subsection{Implementatie}
+
+Voor zowel de referentievideo als de gebruikersvideo wordt een lijst opgebouwd waarin elk element een frame voorstelt, met bijhorende lijst van de vier hoekwaarden. 
+Dit resulteert in twee tijdreeksen van hoekvectoren, waarbij elk vector een 4-dimensionaal datapunt is:
+
+\begin{align*}
+    \textbf{A} &= [\mathbf{h}_1^A, \mathbf{h}_2^A, \dots, \mathbf{h}_n^A] \quad \text{(referentievideo)} \\
+    \textbf{B} &= [\mathbf{h}_1^B, \mathbf{h}_2^B, \dots, \mathbf{h}_m^B] \quad \text{(gebruikersvideo)} \\
+    \mathbf{h}_t &= [\theta_1^t, \theta_2^t, \theta_3^t, \theta_4^t] \in \mathbb{R}^4
+\end{align*}
+
+Deze twee sequenties worden ingevoerd in het DTW-algoritme. 
+Als afstandsmaat tussen twee frames wordt de Euclidische afstand gebruikt:
+
+\[
+d(\mathbf{h}_i^A, \mathbf{h}_j^B) = \sqrt{\sum_{k=1}^4 (\theta_k^i - \theta_k^j)^2}
+\]
+
+Op basis van deze afstandsmatrix wordt het optimale alignatiepad berekend dat de totale afwijking tussen beide sequenties minimaliseert. 
+De output van DTW is een lijst van indexparen:
+
+\[
+\text{AlignmentPath} = [(i_1, j_1), (i_2, j_2), \dots, (i_k, j_k)]
+\]
+
+waarbij elk paar $(i, j)$ een uitgelijnd frame van de referentievideo en de gebruikersvideo representeert. 
+Deze uitgelijnde paren vormen de basis voor verdere vergelijking van uitvoering per frame.
+
+\section{Cosine Similarity als vergelijkingsmaat}
+Na de temporele uitlijning van de videosequenties via \textit{Dynamic Time Warping}, worden gelijke fasen van de beweging in beide video's met elkaar vergeleken. 
+Hiervoor wordt per uitgelijnd framepaar de \textbf{cosinus-similariteit} berekend voor elke van de vier gedefinieerde hoeken afzonderlijk.
+
+Cosine similarity is een maat voor de richtingsovereenkomst tussen twee vectoren in een vectorruimte, ongeacht hun absolute grootte. 
+In tegenstelling tot de Euclidische afstand, die absolute afwijkingen in waarde meet, geeft cosine similarity aan hoe vergelijkbaar de \textit{vorm} of \textit{verdeling} van twee vectoren is. 
+In het geval van scalars, zoals individuele hoeken per frame, kan dit geïnterpreteerd worden als de mate waarin twee waarden relatief in dezelfde richting wijzen ten opzichte van de hele oefening.
+
+De formule voor cosine similarity tussen twee vectoren $\mathbf{a}$ en $\mathbf{b}$ is:
+
+\[
+\text{cosine\_similarity}(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \cdot \|\mathbf{b}\|}
+\]
+
+Aangezien we in deze toepassing werken met individuele hoeken — dus scalars — kan dit vereenvoudigd worden tot:
+
+\[
+\text{cosine\_similarity}(\theta_i^A, \theta_i^B) = \frac{\theta_i^A \cdot \theta_i^B}{|\theta_i^A| \cdot |\theta_i^B|} = \cos(\phi)
+\]
+
+waar $\phi$ de hoek is tussen de twee scalars geïnterpreteerd als richtingsvectoren. 
+De waarde ligt steeds tussen $-1$ (volledig tegengesteld) en $1$ (volledig gelijkgericht).
+
+\subsection{Motivatie voor gebruik}
+
+Voor deze specifieke toepassing — het analyseren van hoeken tussen keypoints tijdens een oefening — is cosine similarity bijzonder geschikt om de volgende redenen:
+
+\begin{itemize}
+    \item De absolute waarde van een hoek kan door kleine biomechanische variaties of lichaamsbouw verschillen, maar de \textit{richting en consistentie} van de beweging is vaak een betrouwbaardere indicator van correcte uitvoering.
+    \item Cosine similarity is minder gevoelig aan schaalverschillen, waardoor het eenvoudiger is om uitvoeringen van verschillende personen met elkaar te vergelijken.
+    \item Door de vergelijking te doen per \textit{individuele hoek en per frame} kunnen lokale afwijkingen gedetecteerd worden, zonder dat deze onmiddellijk overschaduwd worden door globaal grotere of kleinere bewegingsuitslagen.
+\end{itemize}
+
+Voor elk framepaar $(i, j)$ dat via DTW aan elkaar werd gekoppeld, wordt de cosine similarity afzonderlijk berekend voor elke van de vier hoeken:
+
+\[
+\text{sim}_k(i,j) = \frac{\theta_k^i \cdot \theta_k^j}{|\theta_k^i| \cdot |\theta_k^j|} \quad \text{voor } k = 1,\dots,4
+\]
+
+De verzameling van deze vier similariteitsscores vormt de basis voor verdere interpretatie van mogelijke fouten of afwijkingen in de uitvoering.
