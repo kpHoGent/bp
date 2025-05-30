@@ -19,18 +19,12 @@ Dankzij deze eigenschappen sluit een PWA perfect aan bij het doel van dit onderz
 \section{TensorFlow.js}
 Voor de implementatie van MoveNet-model in de browser is gebruikgemaakt van \textbf{TensorFlow.js}, een krachtige machine learning-bibliotheek die toelaat om modellen direct in JavaScript uit te voeren. 
 Dit sluit perfect aan bij een PWA, die volledig in JavaScript of TypeScript wordt ontwikkeld.
-De implementatie verloopt als volgt:
-\begin{enumerate}
-    \item \textbf{Initialisatie}: de TensorFlow.js-runtime wordt ingeladen en geactiveerd met \verb|tf.ready()|.
-    \item \textbf{Model laden}: het pose-detectiemodel wordt gedownload en geïnitialiseerd.
-    \item \textbf{Pose-detectie}: voor elk frame in een video wordt de pose gedetecteerd en opgeslagen.
-    \item \textbf{Asynchrone verwerking}: door gebruik te maken van \verb|Promise| en \verb|await| blijft de interface responsief terwijl de videoframes worden verwerkt.
-\end{enumerate}
 
 \section{Analyse en visualisatie}
 De applicatie laat gebruikers toe om een referentievideo en een eigen videofragment op te laden. 
-De referentievideo is een opname van een correcte uitvoering van een oefening, terwijl de gebruikersvideo de eigen uitvoering van de gebruiker bevat.
-\begin{figure}
+De referentievideo is een opname van een correcte uitvoering van een oefening, terwijl de gebruikersvideo de eigen uitvoering van de gebruiker bevat (zie Figuur~\ref{fig:upload_page}).
+
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{upload-page.png}
   \caption[Upload page]{\label{fig:upload_page}Uploadpagina van de PWA}

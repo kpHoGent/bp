@@ -24,13 +24,13 @@ De beweging begint met het naar achteren duwen van de heupen, gevolgd door een g
 Bij de squat kan het pose estimation model de volgende veelvoorkomende fouten detecteren:
 
 \begin{itemize}
-    \item \textbf{Knieën naar binnen vallend (valgus)}: Wanneer de knieën tijdens de beweging naar binnen vallen ten opzichte van de voetlijn, verhoogt dit het risico op knieblessures \autocite{BengtssonEtAl2018}. 
+    \item \textbf{Knieën naar binnen vallend}: Wanneer de knieën tijdens de beweging naar binnen vallen ten opzichte van de voetlijn, verhoogt dit het risico op knieblessures \autocite{BengtssonEtAl2018}. 
     
     \item \textbf{Hielen die van de grond komen}: Het loskomen van de hielen duidt op een instabiele basis en verschuift het gewicht ongewenst naar de voorvoet \autocite{CzaprowskiEtAl2012}. 
     
     \item \textbf{Overmatige voorwaartse leun}: Een te grote voorwaartse kanteling van de romp verhoogt de schuifkrachten op de onderrug \autocite{BengtssonEtAl2018}. 
     
-    \item \textbf{Bolle bovenrug (thoracale kyfose)}: Een verlies van de natuurlijke rugkromming verhoogt de druk op de tussenwervelschijven \autocite{CzaprowskiEtAl2012}. 
+    \item \textbf{Bolle bovenrug}: Een verlies van de natuurlijke rugkromming verhoogt de druk op de tussenwervelschijven \autocite{CzaprowskiEtAl2012}. 
     
     \item \textbf{Ongecontroleerde beweging of stuiteren}: Een te snelle afdaling of stuiterende beweging onderaan de squat verhoogt de schuifkrachten op de knie \autocite{BengtssonEtAl2018}. 
     
@@ -95,41 +95,8 @@ Bij de deadlift kan het pose estimation model de volgende fouten detecteren:
 Voor een effectieve implementatie van bovengenoemde parameters moet het pose estimation model de volgende technische capaciteiten bezitten:
 
 \subsubsection{Keypoints tracking}
-Het model dient minimaal de volgende gewrichtspunten nauwkeurig te kunnen volgen: enkels, knieën, heupen, schouders, ellebogen, polsen, nek en hoofd, samen met specifieke referentiepunten op de halter.
-
-\subsubsection{Hoekmetingen}
-Het model moet in staat zijn om diverse relevante hoeken te berekenen in verschillende anatomische vlakken (sagittaal, frontaal, transversaal), waaronder:
-\begin{itemize}
-    \item De kniehoek (tussen onder- en bovenbeen)
-    \item De heuphoek (tussen bovenbeen en torso)
-    \item De rughoek (tussen verschillende segmenten van de wervelkolom)
-    \item De ellebooghoek (tussen boven- en onderarm)
-    \item De schouderhoek (tussen bovenarm en torso)
-\end{itemize}
-
-\subsubsection{Trajectoriemeting}
-Het model moet de bewegingsbaan van zowel de stang als de verschillende gewrichten kunnen volgen, met aandacht voor:
-\begin{itemize}
-    \item De verticale en horizontale verplaatsing van de stang
-    \item De symmetrie tussen links/rechts bewegingen
-    \item Afwijkingen van de optimale bewegingsbaan
-\end{itemize}
-
-\subsubsection{Tijdsmetingen}
-Het model dient verschillende tijdsaspecten van de beweging te kunnen meten:
-\begin{itemize}
-    \item De snelheid van de concentrische fase (omhoog/uitduwen)
-    \item De snelheid van de excentrische fase (omlaag/laten zakken)
-    \item Eventuele pauzes of stoppunten in de beweging
-\end{itemize}
-
-\subsubsection{Relatieve posities}
-Tot slot moet het model in staat zijn om relatieve posities tussen verschillende lichaamsdelen te analyseren:
-\begin{itemize}
-    \item De positie van de knieën ten opzichte van de tenen (varus/valgus)
-    \item De positie van de stang ten opzichte van het lichaamszwaartepunt
-    \item De voetpositie ten opzichte van de heupbreedte
-\end{itemize}
+Het model dient minimaal de volgende gewrichtspunten nauwkeurig te kunnen volgen: enkels, knieën, heupen, schouders, ellebogen, polsen, nek en hoofd.
+Deze keypoints zijn essentieel voor het berekenen van de relevante hoeken tussen de ledematen tijdens de uitvoering van de oefeningen.
 
 \section{Frameworkselectie}
 \subsection{Selectiecriteria}

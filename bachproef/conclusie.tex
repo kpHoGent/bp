@@ -14,5 +14,58 @@
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
 
-\lipsum[76-80]
+Het doel van dit onderzoek was het ontwikkelen van een mobiele applicatie die krachttrainingsoefeningen automatisch analyseert en objectieve feedback geeft aan de hand van biomechanische parameters. 
+Centraal stond de onderzoeksvraag:
+
+\begin{quote}
+\textit{Hoe kan een applicatie worden ontwikkeld die bewegingspatronen van cliënten effectief analyseert en vergelijkt met referentievideo’s om nauwkeurige feedback te geven op de uitvoering van krachtoefeningen?}
+\end{quote}
+
+Om deze vraag te beantwoorden, werden vier deelvragen geformuleerd. We reflecteren hier op de antwoorden aan de hand van de behaalde resultaten:
+
+\paragraph{1. Welke bestaande technologieën zijn het meest geschikt voor het herkennen en analyseren van menselijke bewegingspatronen in een mobiele applicatie?}
+Uit de literatuurstudie en experimentele evaluatie kwam \textbf{MoveNet Lightning} als meest geschikte technologie naar voren. Het model biedt realtime prestaties (>50 FPS) met voldoende nauwkeurigheid (17 keypoints) en kan draaien in de browser via \textbf{TensorFlow.js}, wat compatibel is met een Progressive Web App (PWA). Deze combinatie maakt het mogelijk om zonder installatie of cloudverwerking bewegingsdata te analyseren op mobiele toestellen.
+
+\paragraph{2. Welke parameters zijn het meest relevant voor het nauwkeurig vergelijken van bewegingen tussen de referentievideo en de video van de cliënt?}
+Op basis van biomechanische literatuur werden vier kernhoeken gedefinieerd: schouder--elleboog--pols (SEW), heup--knie--enkel (HKA), heup--schouder--elleboog (HSE) en schouder--heup--knie (SHK). Deze hoeken zijn direct gerelateerd aan foutindicatoren zoals bolle rug, onvolledige diepte en slechte elleboogpositie. Het gebruik van deze hoeken maakt het mogelijk om risicovolle afwijkingen automatisch te detecteren, waardoor de app concreet bijdraagt aan blessurepreventie.
+
+\paragraph{3. Hoe kan een algoritme worden ontwikkeld dat verschillen in uitvoering detecteert en bruikbare feedback genereert?}
+Het ontwikkelde algoritme combineert \textbf{frame-per-frame hoekberekening} met \textbf{Dynamic Time Warping} (DTW) om temporele verschillen uit te lijnen. Daarna worden de hoeken tussen de referentie- en gebruikersvideo per frame vergeleken, met kleurgecodeerde visuele feedback (groen = correct, rood = afwijking). Deze aanpak bleek effectief bij het identificeren van foutieve houdingen in de bench press, squat en deadlift, zoals geverifieerd in hoofdstuk 8.
+
+\paragraph{4. Hoe kan de nauwkeurigheid van de videovergelijkingen worden getest en gevalideerd?}
+De nauwkeurigheid werd geëvalueerd door (1) correcte en incorrecte uitvoeringen met elkaar te vergelijken, (2) identieke video's onderling te vergelijken, en (3) video’s van verschillende lichaamstypes met elkaar te vergelijken. De foutdetectie bleef stabiel met afwijkingen onder 10 graden bij gelijke uitvoeringen en toonde robuuste herkenning van foutpatronen. Hiermee werd de betrouwbaarheid van het algoritme onder reële omstandigheden bevestigd.
+
+\section{Kritische reflectie en beperkingen}
+
+Hoewel de doelen grotendeels zijn bereikt, zijn er enkele belangrijke beperkingen:
+
+\begin{itemize}
+    \item De analyse is gebaseerd op video’s vanuit één camerahoek, namelijk de \textbf{rechterzijde}, loodrecht op de sporter. Hierdoor kunnen fouten in het frontale of transversale vlak (zoals rotatie of asymmetrie) niet worden gedetecteerd.
+    \item De keypointdetectie is niet-deterministisch; kleine beeldvariaties kunnen leiden tot schommelingen in hoekberekeningen.
+    \item Er is nog geen automatische classificatie of concrete coachingfeedback. De gebruiker ziet \textit{waar} afwijkingen optreden, maar niet \textit{hoe} deze te corrigeren zijn.
+\end{itemize}
+
+\section{Meerwaarde en bijdrage}
+
+De voorgestelde oplossing draagt concreet bij aan het vakgebied van \textbf{digitale bewegingsanalyse in sport} door:
+\begin{itemize}
+    \item Een lichtgewicht, toegankelijke oplossing te bieden voor bewegingsfeedback zonder dure apparatuur;
+    \item Relevante biomechanische fouten automatisch te detecteren en visueel weer te geven;
+    \item Gebaseerd te zijn op robuuste literatuur over blessurepreventie en trainingsoptimalisatie.
+\end{itemize}
+
+\section{Aanbevelingen voor toekomstig onderzoek}
+
+Toekomstig onderzoek kan zich richten op:
+\begin{enumerate}
+    \item \textbf{Multi-view of 3D-analyse} om rotatie en asymmetrieën te detecteren.
+    \item \textbf{Automatische foutclassificatie} met tekstuele feedback voor eindgebruikers.
+    \item \textbf{Uitgebreid gebruikersonderzoek} met trainers en sporters om de bruikbaarheid en begrijpelijkheid van de feedback te optimaliseren.
+    \item \textbf{Testen in realistische omgevingen} met variërende belichting, kleding en camera-afstanden.
+\end{enumerate}
+
+\noindent
+\textbf{Conclusie:} De combinatie van literatuurgedreven parameters, real-time pose detection en een visueel feedbacksysteem resulteerde in een werkende proof of concept die nauwkeurige, objectieve bewegingsanalyse mogelijk maakt binnen een toegankelijke mobiele applicatie. 
+Dit legt een solide basis voor verdere ontwikkeling richting praktische inzetbaarheid in de sport- en revalidatiecontext.
+
 

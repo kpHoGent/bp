@@ -7,16 +7,16 @@ Voor alle drie de geanalyseerde oefeningen — \textit{bench press}, \textit{dea
  de uitvoering te vergelijken:
 
 \begin{enumerate}
-    \item \textbf{Schouder–Elleboog–Pols (SEW)}: \\
-    Analyseert de oriëntatie van de onderarm ten opzichte van de bovenarm om bijvoorbeeld een te hoge elleboogpositie of een te smalle grip te detecteren.
+    \item \textbf{Schouder–Elleboog–Pols}: \\
+    Analyseert de oriëntatie van de onderarm ten opzichte van de bovenarm om bijvoorbeeld een te hoge elleboogpositie te detecteren.
     
-    \item \textbf{Heup–Knie–Enkel (HKA)}: \\
+    \item \textbf{Heup–Knie–Enkel}: \\
     Beoordeelt de kniehoek om de diepte van de buiging te meten, belangrijk voor een correcte uitvoering van squat en deadlift.
 
-    \item \textbf{Heup–Schouder–Elleboog (HSE)}: \\
+    \item \textbf{Heup–Schouder–Elleboog}: \\
     Meet de hoek bij de oksel om de houding van de bovenarm en romp te evalueren.
 
-    \item \textbf{Schouder–Heup–Knie (SHK)}: \\
+    \item \textbf{Schouder–Heup–Knie}: \\
     Meet de romphelling en rugintegriteit, cruciaal om een bolle rug te voorkomen bij de deadlift of squat.
 \end{enumerate}
 
@@ -29,11 +29,16 @@ Hierdoor kunnen verschillende personen en opnames met verschillende camerahoeken
 Een belangrijk probleem bij de vergelijking van twee video’s van dezelfde oefening is het feit dat uitvoeringen kunnen variëren in tempo en startpunt. 
 Een sporter kan bijvoorbeeld langzamer of sneller bewegen dan de referentiepersoon, of de beweging kan iets eerder of later starten. 
 Hierdoor ontstaat een misalignment in tijd, waardoor een directe frame-per-frame vergelijking onnauwkeurig of misleidend is.
+
+\medskip
+
 Om dit probleem op te vangen, wordt gebruik gemaakt van het Dynamic Time Warping (DTW) algoritme. 
 Dit algoritme zorgt ervoor dat twee reeksen — in dit geval sequenties van lichaamshoeken — optimaal op elkaar worden uitgelijnd, zelfs als de tijdsverdeling ervan ongelijk is. 
 DTW berekent het optimale pad tussen deze twee reeksen door een afstandsmatrix op te stellen waarbij elke cel de afstand tussen twee punten in de sequenties representeert. 
 Vervolgens zoekt het algoritme naar het pad dat de som van de lokale afstanden minimaliseert, rekening houdend met de mogelijkheid om punten in de sequenties te ‘rekken’ of ‘samentrekken’. 
 Zo ontstaat een optimale alignatie van het bewegingsverloop, onafhankelijk van uitvoeringssnelheid of startpunt.
+
+\medskip
 
 In ons geval gebruikt het Dynamic Time Warping-algoritme de eerder berekende hoekvectoren als invoer. Voor elke cel in de afstandsmatrix wordt de afstand tussen twee frames berekend op basis van de Euclidische afstand tussen de vierdimensionale hoekvectoren:
 
@@ -57,11 +62,12 @@ Na de temporele uitlijning via DTW worden de hoeken per frame vergeleken. Per fr
 \]
 
 Dit verschil kan optioneel genormaliseerd worden door deling door 180 graden om een schaal tussen 0 en 1 te verkrijgen, maar kan ook in graden worden behouden. 
-Hierbij wordt gebruikgemaakt van de functie \texttt{angleDifferencePerAngle}. Frames waarin bepaalde keypoints ontbreken (en dus alle hoeken nul zijn) worden daarbij uitgesloten.
 
 
 \section{Conclusie}
-Door per frame de relevante hoeken te berekenen, deze te aligneren via \textit{Dynamic Time Warping}, en vervolgens de verschillen te analyseren, ontstaat een robuuste methode om oefeningsuitvoeringen automatisch te vergelijken. 
+Door per frame de relevante hoeken te berekenen, deze te aligneren via \textit{Dynamic Time Warping}, en vervolgens de verschillen te analyseren, ontstaat een robuuste methode om oefeningsuitvoeringen automatisch te vergelijken. \\
 De focus op hoekvectoren maakt het algoritme ongevoeling voor verschillen in afstand tot de camera, alsook voor verschillen in lichaamsgrootte of -vorm.
+
+\medskip
 Deze aanpak biedt een solide basis voor de verdere ontwikkeling van de proof of concept applicatie, waarin gebruikers hun eigen videofragmenten kunnen vergelijken met referentievideo's om zo hun techniek te verbeteren.
 
