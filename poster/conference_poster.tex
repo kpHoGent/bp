@@ -32,24 +32,22 @@
 
 \begin{abstract}
 Deze bachelorproef onderzoekt hoe een mobiele applicatie personal trainers en fitnesscoaches kan ondersteunen bij het analyseren van krachttrainingstechnieken. 
-
 Door middel van pose estimation wordt bewegingsdata verzameld en vergeleken met referentiemateriaal om realtime feedback te geven. 
-
 De proof-of-concept applicatie toont aan dat automatische bewegingsanalyse mogelijk is via het web met behulp van het framework TensorFlow.js. 
-
 De toepassing is bedoeld om blessures te voorkomen en trainingsresultaten te optimaliseren.
+
 \end{abstract}
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
 \section{Introductie}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\linewidth]{cartoon_bad_exercise.png}
-  \caption*{Foutieve uitvoering van oefening}
-  \vspace{1em}
-\end{figure}
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\hfill % duwt figuur naar rechts
+\includegraphics[width=0.95\linewidth]{cartoon_bad_exercise.png}
+\vspace{1em}
+\end{minipage}
 
 Traditionele methoden bieden vaak onvoldoende nauwkeurige feedback, wat het risico op blessures vergroot. 
 
@@ -59,14 +57,11 @@ Hierbij worden parameters zoals gewrichtshoeken en bewegingssnelheid geanalyseer
 
 De applicatie is gericht op personal trainers, fitnesscoaches en individuele sporters. 
 
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\includegraphics[width=0.95\linewidth]{cartoon_back_pain.png}
 \vspace{1em}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\linewidth]{cartoon_back_pain.png}
-  \caption*{Foutieve uitvoering van oefening}
-  \vspace{1em}
-\end{figure}
+\end{minipage}
 
 Het einddoel is een gebruiksvriendelijke en technisch haalbare oplossing die nauwkeurige bewegingsanalyse mogelijk maakt. 
 
@@ -74,12 +69,12 @@ De proef omvat onder meer literatuuronderzoek, dataverzameling, algoritmische ve
 
 \section{Experimenten}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\linewidth]{cartoon_recording.png}
-  \caption*{Foutieve uitvoering van oefening}
-  \vspace{1em}
-\end{figure}
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+\hfill % duwt figuur naar rechts
+\includegraphics[width=0.95\linewidth]{cartoon_recording.png}
+\vspace{1em}
+\end{minipage}
 
  Voor de oefeningen squat, bench press en deadlift werden op basis van literatuurstudie biomechanische parameters vastgelegd, zoals gewrichtshoeken en bewegingspatronen, waarmee correcte en foutieve uitvoeringen onderscheiden kunnen worden. 
 
@@ -89,14 +84,12 @@ De proef omvat onder meer literatuuronderzoek, dataverzameling, algoritmische ve
 
  Op basis van verschillen in vier centrale hoeken (bv. heup-knie-enkel) wordt feedback gegenereerd, visueel versterkt met kleurcodering. 
 
- \vspace{1em}
+ \noindent
+\begin{minipage}[t]{0.48\linewidth}
+\includegraphics[width=0.95\linewidth]{cartoon_app.png}
+\vspace{1em}
+\end{minipage}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\linewidth]{cartoon_app.png}
-  \caption*{Foutieve uitvoering van oefening}
-  \vspace{1em}
-\end{figure}
 
  Evaluaties tonen aan dat de applicatie betrouwbaar techniekfouten herkent, zoals een bolle rug bij de squat of een te brede grip bij de bench press. 
 
@@ -106,10 +99,9 @@ De proef omvat onder meer literatuuronderzoek, dataverzameling, algoritmische ve
 
 \section{Conclusies}
 
-\begin{figure}[H]
+\begin{figure}
   \centering
   \includegraphics[width=0.45\linewidth]{cartoon_happy.png}
-  \caption*{Foutieve uitvoering van oefening}
   \vspace{1em}
 \end{figure}
  
